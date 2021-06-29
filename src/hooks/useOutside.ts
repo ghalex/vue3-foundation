@@ -1,6 +1,6 @@
-import { onMounted, onUnmounted } from 'vue'
+import { onMounted, onUnmounted, Ref } from 'vue'
 
-export default (el: any, exclude: any[], handler: () => void): any => {
+export default (el: Ref<any>, exclude: any[], handler: () => void): any => {
   function handleOutsideClick (e: Event) {
     e.stopPropagation()
 

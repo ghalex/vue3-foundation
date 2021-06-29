@@ -1,0 +1,16 @@
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.15s ease-out;
+}
+
+.fade-to-from,
+.fade-leave-from {
+  transform: scale(1, 1);
+  opacity: 1;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  transform: scale(0.9, 0.9);
+  opacity: 0;
+}

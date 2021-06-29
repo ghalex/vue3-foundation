@@ -1,14 +1,151 @@
+@use 'sass:color';
+@use "sass:map";
+
 .z-btn {
   appearance: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   transition: all 0.5s ease;
-  height: 40px;
+  height: map-get($btn-sizes, 'normal');
   position: relative;
   border: 2px solid;
   user-select: none;
   text-decoration: none;
   padding: 0 1.5rem;
-  border-radius: 8px;
+  border-radius: $btn-radius;
+  box-shadow: map-get($shadows, 'normal');
+
+  color: $main-color;
+  background-color: transparent;
+  border-color: $main-color;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2em color.adjust($main-color, $alpha: -0.8);
+  }
+
+  /* Hover State */
+  &:hover:not([disabled]),
+  &:hover:not([aria-disabled='true']) {
+    color: white;
+    background-color: $main-color;
+  }
+
+  &[aria-pressed='true'] {
+    box-shadow: 0 0 0 0.4em color.adjust($main-color, $alpha: -0.8);
+  }
+
+  &.small {
+    height: map-get($btn-sizes, 'small');
+  }
+
+  &.large {
+    height: map-get($btn-sizes, 'large'); 
+  }
+
+  &.x-large {
+    height: map-get($btn-sizes, 'x-large'); 
+  }
+}
+
+.z-btn.icon {
+  padding: 0;
+  width: map-get($btn-sizes, 'normal');
+
+  &.small {
+    width: map-get($btn-sizes, 'small');
+  }
+
+  &.large {
+    width: map-get($btn-sizes, 'large'); 
+  }
+
+  &.x-large {
+    width: map-get($btn-sizes, 'x-large'); 
+  }
+}
+
+.z-btn.primary {
+  $color: $primary-color;
+  $accent: white;
+
+  color: $accent;
+  background-color: $color;
+  border-color: $color;
+ 
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2em color.adjust($color, $alpha: -0.8);
+  }
+
+  &:hover:not([disabled]),
+  &:hover:not([aria-disabled='true']) {
+    color: $color;
+    background-color: $accent;
+  }
+
+  &[aria-pressed='true'] {
+    box-shadow: 0 0 0 0.4em color.adjust($color, $alpha: -0.8);
+  }
+}
+
+.z-btn.loading {
+  position: relative;
+  cursor: default;
+  text-shadow: none;
+  color: transparent;
+  opacity: 1;
+  pointer-events: none;
+  transition: all 0s linear, opacity 0.1s ease;
+}
+
+.z-btn.loading:before {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  transform: translateX(-50%) translateY(-50%);
+  border-radius: 500rem;
+  border: 0.2em solid color.adjust($main-color, $alpha: -0.8);
+}
+
+.z-btn.loading:after {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  animation: button-spin 0.6s linear;
+  animation-iteration-count: infinite;
+  border-radius: 500rem;
+  border-color: $main-color transparent transparent;
+  border-style: solid;
+  border-width: 0.2em;
+  box-shadow: 0px 0px 0px 1px transparent;
+}
+
+
+.z-btn.primary.loading:before {
+  border: 0.2em solid rgba(255, 255, 255, 0.15); 
+}
+
+.z-btn.primary.loading:after {
+  border-color: white transparent transparent;
+}
+
+.z-btn.round {
+  border-radius: 999px;
+}
+
+@keyframes button-spin {
+  from {
+    transform: translateX(-50%) translateY(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) translateY(-50%) rotate(360deg);
+  }
 }

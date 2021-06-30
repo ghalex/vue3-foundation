@@ -1,7 +1,11 @@
 <template>
-  <Base v-bind="allProps" @click="handleClick">
+  <Base v-if="as" v-bind="allProps" :as="as" @click="handleClick">
     <slot v-bind="{ checked: isChecked }" />
   </Base>
+  <div v-else v-bind="allProps" @click="handleClick">
+    <input type="radio" :checked="isChecked" />
+    <label><slot /></label>
+  </div>
 </template>
 
 <script lang="ts">
@@ -14,7 +18,7 @@ export default defineComponent({
   props: {
     as: {
       type: String,
-      default: 'input'
+      default: null
     },
     value: {
       type: String,
@@ -38,12 +42,10 @@ export default defineComponent({
     const allProps = computed(() => {
       const p: any = {
         ...attrs,
-        as: props.as,
-        type: props.as === 'input' ? 'radio' : undefined,
         role: 'radio',
         checked: isChecked.value,
         ariaChecked: isChecked.value,
-        class: props.as === 'input' ? classnames('z-radio', props.class) : props.class
+        class: props.as ? props.class : classnames('z-radio', props.class)
       }
 
       return p

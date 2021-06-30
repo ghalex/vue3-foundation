@@ -17,7 +17,7 @@
   box-shadow: map-get($shadows, 'normal');
 
   color: $main-color;
-  background-color: transparent;
+  background-color: white;
   border-color: $main-color;
 
   &:focus {

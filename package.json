@@ -1,6 +1,6 @@
 {
   "name": "vue3-foundation",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "./dist/zapant-ui.umd.min.js",
   "browser": "./dist/zapant-ui.common.js",
   "types": "./dist/types/index.d.ts",

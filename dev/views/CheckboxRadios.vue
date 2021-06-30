@@ -2,12 +2,21 @@
   <div>
     <div class="p-8 text-center">
       <h1 class="title mb-2">Checkboxes</h1>
-      <div class="border flex items-center justify-center p-2">
+      <div class="border flex items-center justify-center p-2 bg-gray-300">
         <v-checkbox as="vButton" class="small" v-slot="{ checked }">
           {{ checked ? 'Checked' : 'Not Checked' }}
         </v-checkbox>
         <v-checkbox v-model="agree" class="ml-4">Agree</v-checkbox>
         <v-checkbox v-model="agree" class="ml-4 primary">Label Here</v-checkbox>
+      </div>
+    </div>
+    <div class="p-8 text-center">
+      <h1 class="title mb-2">Checkboxes</h1>
+      <div class="border flex items-center justify-center p-2 bg-gray-300">
+        <v-radio value="apple" v-model="fruite" class="ml-4">Apple</v-radio>
+        <v-radio value="pear" v-model="fruite" class="ml-4 primary">
+          Pear
+        </v-radio>
       </div>
     </div>
   </div>
@@ -21,8 +30,9 @@ export default defineComponent({
   components: {},
   setup () {
     const agree = ref(true)
+    const fruite = ref('apple')
 
-    return { agree }
+    return { agree, fruite }
   }
 })
 </script>

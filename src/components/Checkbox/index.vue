@@ -1,8 +1,4 @@
 <template>
-  <!-- <Base v-bind="allProps" @click="handleClick" @change="handleChange">
-    <slot v-bind="{ checked: isChecked }" />
-  </Base> -->
-
   <Base v-if="as" v-bind="allProps" :as="as" @click="handleClick">
     <slot v-bind="{ checked: isChecked }" />
   </Base>
@@ -34,10 +30,11 @@ export default defineComponent({
     }
   },
   components: { Base },
-  setup (props, { emit }) {
+  setup (props, { emit, attrs }) {
     const isChecked = ref(props.modelValue)
     const allProps = computed(() => {
       const p: any = {
+        ...attrs,
         role: 'checkbox',
         ariaChecked: isChecked.value,
         checked: isChecked.value,

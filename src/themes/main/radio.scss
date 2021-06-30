@@ -1,0 +1,86 @@
+@use 'sass:color';
+@use "sass:map";
+
+.z-radio {
+  position: relative;
+  display: inline-block;
+  backface-visibility: hidden;
+  outline: none;
+  vertical-align: baseline;
+  font-style: normal;
+
+  min-height: $radio-size;
+  line-height: $radio-size;
+  min-width: $radio-size;
+}
+
+.z-radio label {
+  cursor: pointer;
+  position: relative;
+  display: block;
+  padding-left: 1.30rem;
+  outline: none;
+}
+
+.z-radio label:before {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+
+  width: $radio-size;
+  height: $radio-size;
+  content: '';
+
+  background: white;
+  border-radius: $radio-radius;
+  border: $radio-border solid $main-color;
+}
+
+.z-radio label:after {
+  font-family: FontAwesome;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: $radio-size;
+  height: $radio-size;
+  text-align: center;
+  opacity: 0;
+  color: $main-color;
+  line-height: $radio-size;
+  font-size: 12px;
+  transform: scale(.46666667);
+  border-radius: $radio-radius;
+}
+
+.z-radio input[type="radio"],
+.z-radio input[type="radio"] {
+  cursor: pointer;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 0 !important;
+  outline: none;
+  z-index: 3;
+  width: $radio-size;
+  height: $radio-size;
+}
+
+.z-radio input:checked ~ label:before {
+  background: white;
+  border-color: $main-color;
+}
+
+.z-radio input:checked ~ label:after {
+  content: '';
+  opacity: 1;
+  background-color: $main-color;
+}
+
+.z-radio.primary label:before ,
+.z-radio.primary input:checked ~ label:before {
+  border-color: $primary-color;
+}
+
+.z-radio.primary input:checked ~ label:after {
+  background-color: $primary-color;
+}

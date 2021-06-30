@@ -1,0 +1,84 @@
+@use 'sass:color';
+@use "sass:map";
+
+.z-checkbox {
+  position: relative;
+  display: inline-block;
+  backface-visibility: hidden;
+  outline: none;
+  vertical-align: baseline;
+  font-style: normal;
+
+  min-height: $checkbox-size;
+  line-height: $checkbox-size;
+  min-width: $checkbox-size;
+}
+
+.z-checkbox label {
+  cursor: pointer;
+  position: relative;
+  display: block;
+  padding-left: 1.30rem;
+  outline: none;
+}
+
+.z-checkbox label:before {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+
+  width: $checkbox-size;
+  height: $checkbox-size;
+  content: '';
+
+  background: white;
+  border-radius: $checkbox-radius;
+  border: $checkbox-border solid $main-color;
+}
+
+.z-checkbox label:after {
+  font-family: FontAwesome;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $checkbox-size;
+  height: $checkbox-size;
+  text-align: center;
+  opacity: 0;
+  color: $main-color;
+  line-height: $checkbox-size;
+  font-size: 12px;
+}
+
+.z-checkbox input[type="checkbox"],
+.z-checkbox input[type="radio"] {
+  cursor: pointer;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 0 !important;
+  outline: none;
+  z-index: 3;
+  width: $checkbox-size;
+  height: $checkbox-size;
+}
+
+.z-checkbox input:checked ~ label:before {
+  background: white;
+  border-color: $main-color;
+}
+
+.z-checkbox input:checked ~ label:after {
+  content: '\f00c';
+  opacity: 1;
+  color: $main-color;
+}
+
+.z-checkbox.primary label:before ,
+.z-checkbox.primary input:checked ~ label:before {
+  border-color: $primary-color;
+}
+
+.z-checkbox.primary input:checked ~ label:after {
+  color: $primary-color;
+}

@@ -9,6 +9,20 @@ $btn-sizes: (
   'x-large': 52px
 );
 
+$input-radius: 8px;
+$input-sizes: (
+  'small': 28px,
+  'normal': 36px,
+  'large': 44px,
+  'x-large': 52px 
+);
+
+$checkbox-size: 18px;
+$checkbox-radius: 4px;
+$checkbox-border: 2px;
+
+$menu-radius: 8px;
+
 $shadows: (
   'small': 0 1px 2px 0 rgba(0, 0, 0, 0.05),
   'normal': (0 1px 3px 0 rgba(0, 0, 0, 0.15), 0 1px 2px 0 rgba(0, 0, 0, 0.08)),

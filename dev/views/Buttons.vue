@@ -9,6 +9,7 @@
         <v-button class="primary loading ml-2">Click Me</v-button>
       </div>
     </div>
+
     <div class="p-8 text-center">
       <h1 class="title mb-2">Buttons Size</h1>
       <div class="flex justify-center items-center border p-2">
@@ -18,6 +19,7 @@
         <v-button class="x-large ml-2">Click Me</v-button>
       </div>
     </div>
+
     <div class="p-8 text-center">
       <h1 class="title mb-2">Buttons with Icons</h1>
       <div class="flex items-center justify-center border p-2">
@@ -50,8 +52,4 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped>
-.title {
-  font-size: 24px;
-}
-</style>
+<style lang="scss" scoped></style>

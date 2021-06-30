@@ -1,7 +1,15 @@
 <template>
-  <Base v-bind="allProps" @click="handleClick" @change="handleChange">
+  <!-- <Base v-bind="allProps" @click="handleClick" @change="handleChange">
+    <slot v-bind="{ checked: isChecked }" />
+  </Base> -->
+
+  <Base v-if="as" v-bind="allProps" :as="as" @click="handleClick">
     <slot v-bind="{ checked: isChecked }" />
   </Base>
+  <div v-bind="allProps" @click="handleClick" v-else>
+    <input type="checkbox" :checked="isChecked" />
+    <label><slot /></label>
+  </div>
 </template>
 
 <script lang="ts">
@@ -14,7 +22,7 @@ export default defineComponent({
   props: {
     as: {
       type: String,
-      default: 'input'
+      default: null
     },
     modelValue: {
       type: Boolean,
@@ -26,39 +34,37 @@ export default defineComponent({
     }
   },
   components: { Base },
-  setup (props, { emit, attrs }) {
+  setup (props, { emit }) {
     const isChecked = ref(props.modelValue)
     const allProps = computed(() => {
       const p: any = {
-        ...attrs,
-        as: props.as,
-        type: props.as === 'input' ? 'checkbox' : undefined,
         role: 'checkbox',
         ariaChecked: isChecked.value,
         checked: isChecked.value,
-        class: props.as === 'input' ? classnames('z-checkbox', props.class) : props.class
+        class: props.as ? props.class : classnames('z-checkbox', props.class)
       }
 
       return p
     })
 
     function handleClick () {
-      if (props.as !== 'input') {
-        isChecked.value = !isChecked.value
-        emit('update:modelValue', isChecked.value)
-        emit('change', isChecked.value)
-      }
-    }
-
-    function handleChange (e: Event) {
-      e.stopImmediatePropagation()
-      e.preventDefault()
-
+      console.log('handle click')
+      // if (props.as !== 'input') {
       isChecked.value = !isChecked.value
-
       emit('update:modelValue', isChecked.value)
-      // emit('change', isChecked.value)
+      emit('change', isChecked.value)
+      // }
     }
+
+    // function handleChange (e: Event) {
+    //   e.stopImmediatePropagation()
+    //   e.preventDefault()
+
+    //   isChecked.value = !isChecked.value
+
+    //   emit('update:modelValue', isChecked.value)
+    //   // emit('change', isChecked.value)
+    // }
 
     watch(
       () => props.modelValue,
@@ -67,7 +73,7 @@ export default defineComponent({
       }
     )
 
-    return { isChecked, allProps, handleClick, handleChange }
+    return { isChecked, allProps, handleClick }
   }
 })
 </script>

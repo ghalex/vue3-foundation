@@ -1,0 +1,33 @@
+@use "sass:map";
+@use 'sass:color';
+
+@mixin input($color) {
+  color: $color;
+  border: 2px solid $color;
+
+  &::placeholder {
+    color: color.adjust($color, $alpha: -0.6);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2em color.adjust($color, $alpha: -0.8);
+  }
+
+  &:disabled {
+    background-color: color.adjust($color, $alpha: -0.6);
+  }
+}
+
+.z-input {
+  padding: 0.25rem 0.5rem;
+  height: map.get($input-sizes, 'normal');
+  border-radius: $input-radius;
+  box-shadow: map.get($shadows, 'normal');
+
+  @include input($main-color);
+}
+
+.z-input.primary {
+  @include input($primary-color);
+}

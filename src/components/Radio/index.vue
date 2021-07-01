@@ -11,7 +11,7 @@
 <script lang="ts">
 import classnames from 'classnames'
 import { computed, defineComponent } from 'vue'
-import Base from '../Base/index.vue'
+import Base from '@/components/Base/index.vue'
 
 export default defineComponent({
   name: 'Radio',

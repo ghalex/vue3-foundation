@@ -1,10 +1,15 @@
 <template>
-  <Base v-bind="allProps" class="z-input" :value="modelValue" @input="handleChange" />
+  <Base
+    v-bind="allProps"
+    class="z-input"
+    :value="modelValue"
+    @input="handleChange"
+  />
 </template>
 
 <script lang="ts">
 import { computed, defineComponent } from 'vue'
-import Base from '../Base/index.vue'
+import Base from '@/components/Base/index.vue'
 
 export default defineComponent({
   name: 'Input',

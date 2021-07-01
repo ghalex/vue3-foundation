@@ -11,5 +11,5 @@ const install: Exclude<Plugin['install'], undefined> = function installLib (app:
 
 export default { install }
 
-export * from '@/components'
-export * from '@/hooks'
+export * from './components'
+export * from './hooks'

@@ -16,6 +16,7 @@
 
   &:disabled {
     background-color: color.adjust($color, $alpha: -0.6);
+    opacity: 0.8;
   }
 }
 

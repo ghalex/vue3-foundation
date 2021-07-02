@@ -38,14 +38,17 @@ export default defineComponent({
         role: 'checkbox',
         ariaChecked: isChecked.value,
         checked: isChecked.value,
-        class: props.as ? props.class : classnames('z-checkbox', props.class)
+        class: props.as ? props.class : classnames('z-checkbox', props.class),
+        style: {
+          pointerEvents: attrs.disabled !== undefined ? 'none' : undefined
+        }
       }
 
       return p
     })
 
     function handleClick () {
-      console.log('handle click')
+      // if (attrs.disabled === undefined) {
       // if (props.as !== 'input') {
       isChecked.value = !isChecked.value
       emit('update:modelValue', isChecked.value)

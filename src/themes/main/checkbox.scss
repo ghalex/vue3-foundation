@@ -12,6 +12,11 @@
   min-height: $checkbox-size;
   line-height: $checkbox-size;
   min-width: $checkbox-size;
+
+  &[disabled],
+  &[aria-disabled='true'] {
+    opacity: 0.5;
+  }
 }
 
 .z-checkbox label {

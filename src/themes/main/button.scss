@@ -36,6 +36,11 @@
     box-shadow: 0 0 0 0.4em color.adjust($main-color, $alpha: -0.8);
   }
 
+  &[disabled],
+  &[aria-disabled='true'] {
+    opacity: 0.5;
+  }
+
   &.small {
     height: map-get($btn-sizes, 'small');
   }

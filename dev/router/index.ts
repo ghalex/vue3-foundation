@@ -3,6 +3,7 @@ import Buttons from '../views/Buttons.vue'
 import Inputs from '../views/Inputs.vue'
 import Menus from '../views/Menus.vue'
 import Checkbox from '../views/CheckboxRadios.vue'
+import Dialogs from '../views/Dialogs.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -21,6 +22,10 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/checkbox',
     component: Checkbox
+  },
+  {
+    path: '/dialogs',
+    component: Dialogs
   }
 ]
 

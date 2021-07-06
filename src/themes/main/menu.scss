@@ -4,12 +4,12 @@
 $border-color: $main-color;
 $bg-color: lighten($border-color, 10%);
 
-.z-menu {
+.v-menu {
   position: relative;
   border-radius: $menu-radius;
 }
 
-.z-menu-items {
+.v-menu-items {
   position: absolute;
   background-color: white;
   border: 2px solid $border-color;
@@ -20,7 +20,7 @@ $bg-color: lighten($border-color, 10%);
   z-index: 500;
 }
 
-.z-menu-item {
+.v-menu-item {
   display: flex;
   align-items: center;
   justify-content: stretch;
@@ -32,17 +32,17 @@ $bg-color: lighten($border-color, 10%);
   }
 }
 
-.z-menu-item:not(:last-child) {
+.v-menu-item:not(:last-child) {
   // border-bottom: 2px solid var(--border-color);
 }
 
-.z-menu-item:hover {
+.v-menu-item:hover {
   color: white;
   cursor: pointer;
   background-color: $bg-color;
 }
 
-.z-menu-separator {
+.v-menu-separator {
   background-color: $border-color;
   flex: 1;
   width: 100%;

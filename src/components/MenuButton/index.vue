@@ -27,7 +27,7 @@ export default defineComponent({
       const p: any = {
         ...attrs,
         as: props.as,
-        class: cs('z-menu-button', props.class),
+        class: cs('v-menu-button', props.class),
         'aria-haspopup': 'menu',
         'aria-expanded': state.isOpen
       }

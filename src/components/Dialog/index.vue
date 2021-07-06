@@ -35,7 +35,7 @@ export default defineComponent({
         ...attrs,
         role: 'dialog',
         ariaModal: true,
-        class: cs('z-dialog', props.class),
+        class: cs('v-dialog', props.class),
         style: {
           position: 'fixed',
           top: '50%',
@@ -49,7 +49,7 @@ export default defineComponent({
       return p
     })
 
-    const elements = document.getElementsByClassName('z-dialog-disclosure')
+    const elements = document.getElementsByClassName('v-dialog-disclosure')
     useOutside(dialogRef, elements as any, () => {
       if (props.state && props.autoClose && props.state.isOpen) {
         props.state.close()

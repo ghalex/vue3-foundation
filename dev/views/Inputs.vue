@@ -23,6 +23,10 @@
         <label class="form-label">Error:</label>
         <v-input class="danger" placeholder="ex. Opps!" />
       </div>
+      <div class="mt-2 flex justify-center">
+        <label class="form-label">Phone:</label>
+        <v-textarea rows="5">Some text</v-textarea>
+      </div>
     </div>
     <div class="border p-2">
       <h1>Your name is:</h1>

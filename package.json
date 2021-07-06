@@ -1,6 +1,6 @@
 {
   "name": "vue3-foundation",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "main": "dist/vue3-foundation.js",
   "module": "dist/vue3-foundation.esm.js",
   "types": "dist/index.d.ts",
@@ -50,7 +50,7 @@
     "rollup-plugin-typescript2": "^0.30.0",
     "rollup-plugin-vue": "^6.0.0",
     "sass": "^1.26.5",
-    "sass-loader": "^8.0.2",
+    "sass-loader": "^12.1.0",
     "tailwindcss": "^2.2.4",
     "typescript": "^4.3.4",
     "vue-router": "^4.0.0-0"

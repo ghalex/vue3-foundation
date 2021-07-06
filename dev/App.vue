@@ -12,6 +12,9 @@
     <router-link to="/checkbox" class="px-2" v-slot="{ isActive }">
       <span :class="{ 'text-purple-500': isActive }">Checkbox & Radios</span>
     </router-link>
+    <router-link to="/dialogs" class="px-2" v-slot="{ isActive }">
+      <span :class="{ 'text-purple-500': isActive }">Dialogs</span>
+    </router-link>
   </div>
   <router-view />
 </template>

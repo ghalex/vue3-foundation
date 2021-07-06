@@ -1,7 +1,7 @@
 @use 'sass:color';
 @use "sass:map";
 
-.z-btn {
+.v-btn {
   appearance: none;
   display: inline-flex;
   align-items: center;
@@ -49,7 +49,7 @@
   }
 }
 
-.z-btn.icon {
+.v-btn.icon {
   padding: 0;
   width: map-get($btn-sizes, 'normal');
 
@@ -66,7 +66,7 @@
   }
 }
 
-.z-btn.primary {
+.v-btn.primary {
   $color: $primary-color;
   $accent: white;
 
@@ -90,7 +90,7 @@
   }
 }
 
-.z-btn.loading {
+.v-btn.loading {
   position: relative;
   cursor: default;
   text-shadow: none;
@@ -100,7 +100,7 @@
   transition: all 0s linear, opacity 0.1s ease;
 }
 
-.z-btn.loading:before {
+.v-btn.loading:before {
   position: absolute;
   content: '';
   top: 50%;
@@ -112,7 +112,7 @@
   border: 0.2em solid color.adjust($main-color, $alpha: -0.8);
 }
 
-.z-btn.loading:after {
+.v-btn.loading:after {
   position: absolute;
   content: '';
   top: 50%;
@@ -129,15 +129,15 @@
 }
 
 
-.z-btn.primary.loading:before {
+.v-btn.primary.loading:before {
   border: 0.2em solid rgba(255, 255, 255, 0.15); 
 }
 
-.z-btn.primary.loading:after {
+.v-btn.primary.loading:after {
   border-color: white transparent transparent;
 }
 
-.z-btn.round {
+.v-btn.round {
   border-radius: 999px;
 }
 

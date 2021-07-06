@@ -29,7 +29,7 @@ export default defineComponent({
     const allProps = computed(() => {
       const p: any = {
         ...attrs,
-        class: cs('z-menu', props.class),
+        class: cs('v-menu', props.class),
         style: {
           ...props.style
         }

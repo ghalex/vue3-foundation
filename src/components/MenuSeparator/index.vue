@@ -23,7 +23,7 @@ export default defineComponent({
     const allProps = computed(() => {
       const p: any = {
         ...attrs,
-        class: cs('z-menu-separator', props.class)
+        class: cs('v-menu-separator', props.class)
       }
 
       return p

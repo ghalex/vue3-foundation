@@ -1,5 +1,10 @@
 <template>
-  <Base v-bind="allProps" @mouseover="isActive = true" @mouseout="isActive = false" @click.stop="handleClick">
+  <Base
+    v-bind="allProps"
+    @mouseover="isActive = true"
+    @mouseout="isActive = false"
+    @click.stop="handleClick"
+  >
     <slot v-bind="{ active: isActive }" />
   </Base>
 </template>
@@ -35,7 +40,9 @@ export default defineComponent({
         ...attrs,
         as: props.as,
         role: 'menuitem',
-        class: classnames('z-menu-item', props.class, { active: isActive.value })
+        class: classnames('v-menu-item', props.class, {
+          active: isActive.value
+        })
       }
 
       return p

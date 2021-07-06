@@ -1,0 +1,12 @@
+@use "sass:map";
+
+.v-dialog {
+  background-color: white;
+  border: 2px solid $main-color;
+  border-radius: $dialog-radius;
+  box-shadow: map.get($shadows, 'normal');
+}
+
+.v-dialog-backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}

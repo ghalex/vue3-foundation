@@ -28,7 +28,7 @@ export default defineComponent({
       const p: any = {
         ...attrs,
         ariaModal: true,
-        class: cs('z-dialog-backdrop', props.class),
+        class: cs('v-dialog-backdrop', props.class),
         style: {
           position: 'fixed',
           inset: 0,

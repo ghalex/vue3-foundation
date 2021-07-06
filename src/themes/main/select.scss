@@ -1,0 +1,36 @@
+@use 'sass:color';
+@use "sass:map";
+
+@mixin select($color) {
+  $focusColor: color.adjust($color, $alpha: -0.8);
+  color: $color;
+  border: 2px solid $color;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2em $focusColor;
+  }
+
+  &:disabled {
+    opacity: 0.8;
+  }
+}
+
+.v-select {
+  appearance: none;
+  background-color: white;
+  border-radius: $input-radius;
+  box-shadow: map-get($shadows, 'normal');
+  height: map-get($input-sizes, 'normal');
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI2EwYWVjMCIgd2lkdGg9IjMycHgiIGhlaWdodD0iMzJweCI+PHBhdGggZD0iTTcuNDEgOC41OUwxMiAxMy4xN2w0LjU5LTQuNThMMTggMTBsLTYgNi02LTYgMS40MS0xLjQxeiIvPjxwYXRoIGQ9Ik0wIDBoMjR2MjRIMFYweiIgZmlsbD0ibm9uZSIvPjwvc3ZnPg==');
+  background-repeat: no-repeat, repeat;
+  background-position: right 0.7em top 50%, 0 0;
+  background-size: 22px auto, 100%;
+  padding: 4px 32px 4px 8px;
+  
+  @include select($main-color);
+}
+
+.v-select.primary {
+  @include select($primary-color);
+}

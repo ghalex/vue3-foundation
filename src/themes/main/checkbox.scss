@@ -1,7 +1,7 @@
 @use 'sass:color';
 @use "sass:map";
 
-.z-checkbox {
+.v-checkbox {
   position: relative;
   display: inline-block;
   backface-visibility: hidden;
@@ -14,7 +14,7 @@
   min-width: $checkbox-size;
 }
 
-.z-checkbox label {
+.v-checkbox label {
   cursor: pointer;
   position: relative;
   display: block;
@@ -22,7 +22,7 @@
   outline: none;
 }
 
-.z-checkbox label:before {
+.v-checkbox label:before {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -36,7 +36,7 @@
   border: $checkbox-border solid $main-color;
 }
 
-.z-checkbox label:after {
+.v-checkbox label:after {
   font-family: FontAwesome;
   position: absolute;
   top: 0;
@@ -50,8 +50,8 @@
   font-size: 12px;
 }
 
-.z-checkbox input[type="checkbox"],
-.z-checkbox input[type="radio"] {
+.v-checkbox input[type="checkbox"],
+.v-checkbox input[type="radio"] {
   cursor: pointer;
   position: absolute;
   top: 0px;
@@ -63,22 +63,22 @@
   height: $checkbox-size;
 }
 
-.z-checkbox input:checked ~ label:before {
+.v-checkbox input:checked ~ label:before {
   background: white;
   border-color: $main-color;
 }
 
-.z-checkbox input:checked ~ label:after {
+.v-checkbox input:checked ~ label:after {
   content: '\f00c';
   opacity: 1;
   color: $main-color;
 }
 
-.z-checkbox.primary label:before ,
-.z-checkbox.primary input:checked ~ label:before {
+.v-checkbox.primary label:before ,
+.v-checkbox.primary input:checked ~ label:before {
   border-color: $primary-color;
 }
 
-.z-checkbox.primary input:checked ~ label:after {
+.v-checkbox.primary input:checked ~ label:after {
   color: $primary-color;
 }

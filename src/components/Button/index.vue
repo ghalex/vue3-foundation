@@ -1,5 +1,10 @@
 <template>
-  <Base v-bind="allProps" @mousedown="() => (isPressed = true)" @mouseup="() => (isPressed = false)"><slot /></Base>
+  <Base
+    v-bind="allProps"
+    @mousedown="() => (isPressed = true)"
+    @mouseup="() => (isPressed = false)"
+    ><slot
+  /></Base>
 </template>
 
 <script lang="ts">
@@ -28,7 +33,7 @@ export default defineComponent({
         as: props.as,
         role: 'button',
         ariaPressed: isPressed.value,
-        class: classnames('z-btn', props.class)
+        class: classnames('v-btn', props.class)
       }
 
       return p

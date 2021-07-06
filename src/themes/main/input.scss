@@ -19,15 +19,32 @@
   }
 }
 
-.z-input {
+.v-input {
+  appearance: none;
   padding: 0.25rem 0.5rem;
   height: map.get($input-sizes, 'normal');
   border-radius: $input-radius;
   box-shadow: map.get($shadows, 'normal');
+  display: inline-block;
 
   @include input($main-color);
 }
 
-.z-input.primary {
+.v-input.primary {
+  @include input($primary-color);
+}
+
+.v-textarea {
+  appearance: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: $input-radius;
+  box-shadow: map-get($shadows, 'normal'); 
+  display: inline-block;
+
+  @include input($main-color);
+}
+
+
+.v-textarea.primary {
   @include input($primary-color);
 }

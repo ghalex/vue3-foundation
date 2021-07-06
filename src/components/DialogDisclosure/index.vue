@@ -12,7 +12,7 @@ export default defineComponent({
   props: {
     as: {
       type: String,
-      default: 'ZbButton'
+      default: 'vButton'
     },
     state: {
       type: Object,
@@ -33,7 +33,7 @@ export default defineComponent({
       const p: any = {
         ...attrs,
         as: props.as,
-        class: cs('z-dialog-disclosure', props.class),
+        class: cs('v-dialog-disclosure', props.class),
         'aria-haspopup': 'dialog',
         'aria-expanded': props.state.isOpen,
         disabled: props.state.isOpen && props.autoDisable

@@ -19,13 +19,17 @@ export default defineComponent({
     }
   },
   setup (props, { attrs }) {
-    const state = inject('menu-state', { isOpen: false, open: () => true, close: () => true })
+    const state = inject('menu-state', {
+      isOpen: false,
+      open: () => true,
+      close: () => true
+    })
 
     const allProps = computed(() => {
       const p: any = {
         ...attrs,
         role: 'menu',
-        class: cs('z-menu-items', props.class),
+        class: cs('v-menu-items', props.class),
         style: {
           ...props.style
         },

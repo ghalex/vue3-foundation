@@ -1,7 +1,7 @@
 @use 'sass:color';
 @use "sass:map";
 
-.z-radio {
+.v-radio {
   position: relative;
   display: inline-block;
   backface-visibility: hidden;
@@ -14,7 +14,7 @@
   min-width: $radio-size;
 }
 
-.z-radio label {
+.v-radio label {
   cursor: pointer;
   position: relative;
   display: block;
@@ -22,7 +22,7 @@
   outline: none;
 }
 
-.z-radio label:before {
+.v-radio label:before {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -36,7 +36,7 @@
   border: $radio-border solid $main-color;
 }
 
-.z-radio label:after {
+.v-radio label:after {
   font-family: FontAwesome;
   position: absolute;
   top: 0px;
@@ -52,8 +52,8 @@
   border-radius: $radio-radius;
 }
 
-.z-radio input[type="radio"],
-.z-radio input[type="radio"] {
+.v-radio input[type="radio"],
+.v-radio input[type="radio"] {
   cursor: pointer;
   position: absolute;
   top: 0px;
@@ -65,22 +65,22 @@
   height: $radio-size;
 }
 
-.z-radio input:checked ~ label:before {
+.v-radio input:checked ~ label:before {
   background: white;
   border-color: $main-color;
 }
 
-.z-radio input:checked ~ label:after {
+.v-radio input:checked ~ label:after {
   content: '';
   opacity: 1;
   background-color: $main-color;
 }
 
-.z-radio.primary label:before ,
-.z-radio.primary input:checked ~ label:before {
+.v-radio.primary label:before ,
+.v-radio.primary input:checked ~ label:before {
   border-color: $primary-color;
 }
 
-.z-radio.primary input:checked ~ label:after {
+.v-radio.primary input:checked ~ label:after {
   background-color: $primary-color;
 }

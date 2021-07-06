@@ -1,7 +1,7 @@
 <template>
   <Base
     v-bind="allProps"
-    class="v-input"
+    class="v-textarea"
     :value="modelValue"
     @input="handleChange"
   />
@@ -12,11 +12,11 @@ import { computed, defineComponent } from 'vue'
 import Base from '@/components/Base/index.vue'
 
 export default defineComponent({
-  name: 'Input',
+  name: 'Textarea',
   props: {
     as: {
       type: String,
-      default: 'input'
+      default: 'textarea'
     },
     modelValue: {
       type: String,
@@ -30,10 +30,12 @@ export default defineComponent({
         ...attrs,
         as: props.as,
         role: 'textbox',
-        type: props.as === 'input' ? 'text' : undefined,
-        contenteditable: props.as === 'input' ? undefined : true,
+        'aria-multiline': true,
+        type: props.as === 'textarea' ? 'text' : undefined,
+        contenteditable: props.as === 'textarea' ? undefined : true,
         style: {
-          minWidth: '50px'
+          minWidth: '150px',
+          textAlign: 'left'
         }
       }
 

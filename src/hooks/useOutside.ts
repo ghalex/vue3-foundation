@@ -22,8 +22,6 @@ export default (el: Ref<any>, exclude: any[], handler: () => void): any => {
   onMounted(() => {
     document.addEventListener('click', handleOutsideClick)
     document.addEventListener('touchstart', handleOutsideClick)
-
-    console.log(el.value)
   })
 
   onUnmounted(() => {

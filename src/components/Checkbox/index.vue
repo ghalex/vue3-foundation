@@ -38,14 +38,10 @@ export default defineComponent({
         role: 'checkbox',
         ariaChecked: isChecked.value,
         checked: isChecked.value,
-<<<<<<< HEAD
-        class: props.as ? props.class : classnames('v-checkbox', props.class)
-=======
-        class: props.as ? props.class : classnames('z-checkbox', props.class),
+        class: props.as ? props.class : classnames('v-checkbox', props.class),
         style: {
           pointerEvents: attrs.disabled !== undefined ? 'none' : undefined
         }
->>>>>>> 4eb7d9350285369b0e43bc08af3f33fca4ad9819
       }
 
       return p

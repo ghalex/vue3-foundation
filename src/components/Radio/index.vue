@@ -45,7 +45,14 @@ export default defineComponent({
         role: 'radio',
         checked: isChecked.value,
         ariaChecked: isChecked.value,
+<<<<<<< HEAD
         class: props.as ? props.class : classnames('v-radio', props.class)
+=======
+        class: props.as ? props.class : classnames('z-radio', props.class),
+        style: {
+          pointerEvents: attrs.disabled !== undefined ? 'none' : undefined
+        }
+>>>>>>> 4eb7d9350285369b0e43bc08af3f33fca4ad9819
       }
 
       return p

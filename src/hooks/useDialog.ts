@@ -4,7 +4,7 @@ interface DialogState {
   isOpen: boolean
   events: any
   data: any
-  open: () => void
+  open: (data?: any) => void
   close: () => void
 }
 

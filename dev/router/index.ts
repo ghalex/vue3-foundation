@@ -4,6 +4,7 @@ import Inputs from '../views/Inputs.vue'
 import Menus from '../views/Menus.vue'
 import Checkbox from '../views/CheckboxRadios.vue'
 import Dialogs from '../views/Dialogs.vue'
+import Select from '../views/Select.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -26,6 +27,10 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/dialogs',
     component: Dialogs
+  },
+  {
+    path: '/selects',
+    component: Select
   }
 ]
 

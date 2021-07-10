@@ -7,7 +7,7 @@
 <script lang="ts">
 import cs from 'classnames'
 import { defineComponent, computed, ref } from 'vue'
-import { useOutside } from '@/hooks'
+// import { useOutside } from '@/hooks'
 
 export default defineComponent({
   props: {
@@ -24,7 +24,7 @@ export default defineComponent({
     },
     autoClose: {
       type: Boolean,
-      default: true
+      default: false
     }
   },
   setup (props, { attrs }) {
@@ -49,12 +49,12 @@ export default defineComponent({
       return p
     })
 
-    const elements = document.getElementsByClassName('v-dialog-disclosure')
-    useOutside(dialogRef, elements as any, () => {
-      if (props.state && props.autoClose && props.state.isOpen) {
-        props.state.close()
-      }
-    })
+    // const elements = document.getElementsByClassName('v-dialog-disclosure')
+    // useOutside(dialogRef, elements as any, () => {
+    //   if (props.state && props.autoClose && props.state.isOpen) {
+    //     props.state.close()
+    //   }
+    // })
 
     return { allProps, dialogRef }
   }

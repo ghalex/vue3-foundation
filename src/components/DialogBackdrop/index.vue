@@ -1,6 +1,6 @@
 <template>
   <Teleport to="#teleport">
-    <div v-if="state.isOpen" v-bind="allProps"><slot /></div>
+    <div v-if="state.isOpen" v-bind="allProps" @click="onClick"><slot /></div>
   </Teleport>
 </template>
 
@@ -40,7 +40,11 @@ export default defineComponent({
       return p
     })
 
-    return { allProps }
+    function onClick () {
+      if (props.state) props.state.close()
+    }
+
+    return { allProps, onClick }
   }
 })
 </script>

@@ -78,6 +78,11 @@
   height: map-get($btn-sizes, 'normal');
   min-width: 50px;
   overflow: hidden;
+  background-color: white;
+
+  & > span {
+    white-space: nowrap;
+  }
 }
 
 .v-file__button {

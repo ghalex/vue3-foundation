@@ -32,16 +32,22 @@ export default defineComponent({
     loading: {
       type: Boolean,
       default: false
+    },
+    modelValue: {
+      type: Object,
+      default: null
     }
   },
   components: { vButton },
-  setup (_, { emit }) {
+  setup (props, { emit }) {
     const id = Date.now()
-    const file = ref(null)
+    const file = ref(props.modelValue)
     const fileRef: any = ref(null)
 
     function handleNewFile () {
       file.value = fileRef.value?.files[0]
+
+      emit('update:modelValue', file.value)
       emit('file', file.value)
     }
 

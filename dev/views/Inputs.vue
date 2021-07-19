@@ -28,22 +28,27 @@
         <v-textarea rows="5">Some text</v-textarea>
       </div>
     </div>
-    <div class="border p-2 mt-2">
-      <h1>Upload your file:</h1>
+    <div class="border p-2 mt-2 flex justify-center items-center">
+      <h1 class="mr-2">Upload your file:</h1>
       <div class="w-250">
-        <v-file class="primary w-full" :loading="false" />
+        <v-file v-model="file" class="primary w-full" :loading="false" />
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { ref, defineComponent } from 'vue'
+import { ref, defineComponent, watch } from 'vue'
 
 export default defineComponent({
   setup () {
     const name = ref('Alex')
-    return { name }
+    const file = ref(null)
+
+    watch(file, () => {
+      console.log(file.value)
+    })
+    return { name, file }
   }
 })
 </script>

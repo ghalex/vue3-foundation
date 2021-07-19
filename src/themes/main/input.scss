@@ -49,3 +49,41 @@
 .v-textarea.primary {
   @include input($primary-color);
 }
+
+.v-file {
+  display: flex;
+
+  & > input {
+    display: flex;
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+}
+
+.v-file__label {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  border-radius: 8px 0 0 8px;
+  transition: all 0.5s ease;
+  border: 2px solid;
+  margin-right: -2px;
+  color: $main-color;
+  border-color: $main-color;
+  height: map-get($btn-sizes, 'normal');
+  min-width: 50px;
+  overflow: hidden;
+}
+
+.v-file__button {
+  border-radius: 0px 8px 8px 0px;
+}
+
+.v-file__placeholder {
+  opacity: 0.5;
+}

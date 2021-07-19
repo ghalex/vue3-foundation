@@ -28,9 +28,11 @@
         <v-textarea rows="5">Some text</v-textarea>
       </div>
     </div>
-    <div class="border p-2">
-      <h1>Your name is:</h1>
-      <b>{{ name }}</b>
+    <div class="border p-2 mt-2">
+      <h1>Upload your file:</h1>
+      <div class="w-250">
+        <v-file class="primary w-full" :loading="false" />
+      </div>
     </div>
   </div>
 </template>
@@ -46,4 +48,8 @@ export default defineComponent({
 })
 </script>
 
-<style></style>
+<style>
+.w-250 {
+  width: 350px;
+}
+</style>

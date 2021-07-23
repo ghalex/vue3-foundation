@@ -1,5 +1,6 @@
 $main-color: #4a5568;
 $primary-color: #6b46c1;
+$gray-color: #E5E7EB;
 
 $btn-radius: 8px;
 $btn-sizes: (
@@ -28,6 +29,14 @@ $radio-border: 2px;
 $menu-radius: 8px;
 
 $dialog-radius: 8px;
+
+$tab-radius: 0px;
+$tab-border: 2px;
+$tab-border-color: transparent;
+$tab-active-text-color: $primary-color;
+$tab-active-color: $gray-color;
+$tab-height: 36px;
+$tab-content-color: $gray-color;
 
 $shadows: (
   'small': 0 1px 2px 0 rgba(0, 0, 0, 0.05),

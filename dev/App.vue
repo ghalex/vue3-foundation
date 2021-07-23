@@ -18,6 +18,9 @@
     <router-link to="/selects" class="px-2" v-slot="{ isActive }">
       <span :class="{ 'text-purple-500': isActive }">Selects</span>
     </router-link>
+    <router-link to="/tab" class="px-2" v-slot="{ isActive }">
+      <span :class="{ 'text-purple-500': isActive }">Tab</span>
+    </router-link>
   </div>
   <router-view />
 </template>

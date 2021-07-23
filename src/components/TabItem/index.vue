@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import cs from 'classnames'
-import { computed, defineComponent, inject } from 'vue'
+import { computed, defineComponent, inject, Ref, ref } from 'vue'
 import Base from '../Base/index.vue'
 import { TabState } from '@/hooks/useTab'
 
@@ -27,9 +27,9 @@ export default defineComponent({
   },
   components: { Base },
   setup (props, { attrs }) {
-    const state = inject<TabState | null>('tab-state', null)
+    const state = inject<Ref<TabState | null>>('tab-state', ref(null))
     const isActive = computed(() => {
-      return state && state.active === props.name
+      return state.value && state.value.active === props.name
     })
 
     const allProps = computed(() => {
@@ -45,8 +45,8 @@ export default defineComponent({
     })
 
     function handleClick () {
-      if (state) {
-        state.select(props.name)
+      if (state.value) {
+        state.value.select(props.name)
       }
     }
 

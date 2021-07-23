@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import cs from 'classnames'
-import { computed, defineComponent, provide } from 'vue'
+import { computed, defineComponent, provide, ref } from 'vue'
 
 export default defineComponent({
   props: {
@@ -29,7 +29,7 @@ export default defineComponent({
       return p
     })
 
-    provide('tab-state', props.state)
+    provide('tab-state', ref(props.state))
 
     return { allProps }
   }

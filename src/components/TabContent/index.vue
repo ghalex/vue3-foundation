@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { TabState } from '@/hooks/useTab'
-import { computed, defineComponent, inject, Ref, ref } from '@vue/runtime-core'
+import { computed, defineComponent, inject, Ref, ref } from 'vue'
 
 export default defineComponent({
   props: {

@@ -26,7 +26,7 @@
   }
 
   /* Hover State */
-  &:hover:not([disabled]),
+  &:hover:not([disabled='true']),
   &:hover:not([aria-disabled='true']) {
     color: white;
     background-color: $main-color;
@@ -36,7 +36,7 @@
     box-shadow: 0 0 0 0.4em color.adjust($main-color, $alpha: -0.8);
   }
 
-  &[disabled],
+  &[disabled='true'],
   &[aria-disabled='true'] {
     opacity: 0.5;
   }
@@ -46,11 +46,11 @@
   }
 
   &.large {
-    height: map-get($btn-sizes, 'large'); 
+    height: map-get($btn-sizes, 'large');
   }
 
   &.x-large {
-    height: map-get($btn-sizes, 'x-large'); 
+    height: map-get($btn-sizes, 'x-large');
   }
 }
 
@@ -63,11 +63,11 @@
   }
 
   &.large {
-    width: map-get($btn-sizes, 'large'); 
+    width: map-get($btn-sizes, 'large');
   }
 
   &.x-large {
-    width: map-get($btn-sizes, 'x-large'); 
+    width: map-get($btn-sizes, 'x-large');
   }
 }
 
@@ -78,13 +78,13 @@
   color: $accent;
   background-color: $color;
   border-color: $color;
- 
+
   &:focus {
     outline: none;
     box-shadow: 0 0 0 0.2em color.adjust($color, $alpha: -0.8);
   }
 
-  &:hover:not([disabled]),
+  &:hover:not([disabled='true']),
   &:hover:not([aria-disabled='true']) {
     color: $color;
     background-color: $accent;
@@ -133,9 +133,8 @@
   box-shadow: 0px 0px 0px 1px transparent;
 }
 
-
 .v-btn.primary.loading:before {
-  border: 0.2em solid rgba(255, 255, 255, 0.15); 
+  border: 0.2em solid rgba(255, 255, 255, 0.15);
 }
 
 .v-btn.primary.loading:after {

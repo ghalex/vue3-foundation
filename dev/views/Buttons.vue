@@ -3,7 +3,7 @@
     <div class="p-8 text-center">
       <h1 class="title mb-2">Buttons</h1>
       <div class="border p-2">
-        <v-button disabled>Click Me</v-button>
+        <v-button :disabled="false">Click Me</v-button>
         <v-button disabled class="primary ml-2">Click Me</v-button>
         <v-button class="loading ml-2">Click Me</v-button>
         <v-button class="primary loading ml-2">Click Me</v-button>

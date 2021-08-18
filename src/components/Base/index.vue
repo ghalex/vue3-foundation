@@ -28,7 +28,7 @@ export default defineComponent({
         ariaDisabled: props.disabled ? true : undefined,
         class: props.class,
         style: {
-          pointerEvents: props.disabled ? 'none' : undefined
+          pointerEvents: props.disabled === true ? 'none' : undefined
         }
       }
 

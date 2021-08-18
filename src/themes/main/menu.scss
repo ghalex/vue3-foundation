@@ -26,7 +26,7 @@ $bg-color: lighten($border-color, 10%);
   justify-content: stretch;
   white-space: nowrap;
 
-  &[disabled],
+  &[disabled='true'],
   &[aria-disabled='true'] {
     color: #ccc;
   }

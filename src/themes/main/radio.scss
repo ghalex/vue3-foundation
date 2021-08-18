@@ -12,8 +12,8 @@
   min-height: $radio-size;
   line-height: $radio-size;
   min-width: $radio-size;
-  
-  &[disabled],
+
+  &[disabled='true'],
   &[aria-disabled='true'] {
     opacity: 0.5;
   }
@@ -23,7 +23,7 @@
   cursor: pointer;
   position: relative;
   display: block;
-  padding-left: 1.30rem;
+  padding-left: 1.3rem;
   outline: none;
 }
 
@@ -53,12 +53,12 @@
   color: $main-color;
   line-height: $radio-size;
   font-size: 12px;
-  transform: scale(.46666667);
+  transform: scale(0.46666667);
   border-radius: $radio-radius;
 }
 
-.v-radio input[type="radio"],
-.v-radio input[type="radio"] {
+.v-radio input[type='radio'],
+.v-radio input[type='radio'] {
   cursor: pointer;
   position: absolute;
   top: 0px;
@@ -81,7 +81,7 @@
   background-color: $main-color;
 }
 
-.v-radio.primary label:before ,
+.v-radio.primary label:before,
 .v-radio.primary input:checked ~ label:before {
   border-color: $primary-color;
 }

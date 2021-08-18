@@ -13,7 +13,7 @@
   line-height: $checkbox-size;
   min-width: $checkbox-size;
 
-  &[disabled],
+  &[disabled='true'],
   &[aria-disabled='true'] {
     opacity: 0.5;
   }
@@ -23,7 +23,7 @@
   cursor: pointer;
   position: relative;
   display: block;
-  padding-left: 1.30rem;
+  padding-left: 1.3rem;
   outline: none;
 }
 
@@ -55,8 +55,8 @@
   font-size: 12px;
 }
 
-.v-checkbox input[type="checkbox"],
-.v-checkbox input[type="radio"] {
+.v-checkbox input[type='checkbox'],
+.v-checkbox input[type='radio'] {
   cursor: pointer;
   position: absolute;
   top: 0px;
@@ -79,7 +79,7 @@
   color: $main-color;
 }
 
-.v-checkbox.primary label:before ,
+.v-checkbox.primary label:before,
 .v-checkbox.primary input:checked ~ label:before {
   border-color: $primary-color;
 }

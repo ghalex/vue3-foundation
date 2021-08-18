@@ -16,7 +16,7 @@
 
   /* Hover & Active State */
   &.active,
-  &:hover:not([disabled]),
+  &:hover:not([disabled='true']),
   &:hover:not([aria-disabled='true']) {
     color: $tab-active-text-color;
     background-color: $tab-active-color;
@@ -34,7 +34,7 @@
   text-align: left;
   padding: 12px 48px 12px 12px;
 
-  &:hover:not([disabled]),
+  &:hover:not([disabled='true']),
   &:hover:not([aria-disabled='true']) {
     border-top: $tab-border solid $tab-border-color;
   }

@@ -8,7 +8,7 @@
       <div class="mt-2">
         <label class="form-label">Email:</label>
         <v-input
-          disabled
+          :disabled="true"
           placeholder="ex. email@gmail.com"
           value="hello@email.com"
         />

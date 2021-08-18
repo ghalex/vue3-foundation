@@ -47,7 +47,7 @@ export default defineComponent({
         ariaChecked: isChecked.value,
         class: props.as ? props.class : classnames('v-radio', props.class),
         style: {
-          pointerEvents: attrs.disabled !== undefined ? 'none' : undefined
+          pointerEvents: attrs.disabled === true ? 'none' : undefined
         }
       }
 

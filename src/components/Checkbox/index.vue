@@ -40,7 +40,7 @@ export default defineComponent({
         checked: isChecked.value,
         class: props.as ? props.class : classnames('v-checkbox', props.class),
         style: {
-          pointerEvents: attrs.disabled !== undefined ? 'none' : undefined
+          pointerEvents: attrs.disabled === true ? 'none' : undefined
         }
       }
 

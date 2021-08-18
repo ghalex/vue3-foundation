@@ -6,7 +6,7 @@
         <v-checkbox as="vButton" class="small" v-slot="{ checked }">
           {{ checked ? 'Checked' : 'Not Checked' }}
         </v-checkbox>
-        <v-checkbox disabled v-model="agree" class="ml-4">
+        <v-checkbox :checked="true" class="ml-4">
           Agree
         </v-checkbox>
         <v-checkbox v-model="agree" class="ml-4 primary">Label Here</v-checkbox>

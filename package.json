@@ -1,6 +1,6 @@
 {
   "name": "vue3-foundation",
-  "version": "0.2.10",
+  "version": "0.2.11",
   "main": "dist/vue3-foundation.js",
   "module": "dist/vue3-foundation.esm.js",
   "types": "dist/index.d.ts",

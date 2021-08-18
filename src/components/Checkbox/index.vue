@@ -24,6 +24,10 @@ export default defineComponent({
       type: Boolean,
       required: false
     },
+    checked: {
+      type: Boolean,
+      required: false
+    },
     class: {
       type: String,
       required: false
@@ -31,7 +35,7 @@ export default defineComponent({
   },
   components: { Base },
   setup (props, { emit, attrs }) {
-    const isChecked = ref(props.modelValue)
+    const isChecked = ref(props.modelValue || props.checked)
     const allProps = computed(() => {
       const p: any = {
         ...attrs,

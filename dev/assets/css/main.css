@@ -1,0 +1,11 @@
+@import 'tailwind.css';
+@import '@/../themes/main/index.css';
+
+.form-label {
+  width: 80px;
+  display: inline-block;
+}
+
+.title {
+  font-size: 24px;
+}

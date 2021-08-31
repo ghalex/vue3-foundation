@@ -1,0 +1,154 @@
+.v-btn {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease;
+  height: var(--btn-size-normal);
+  position: relative;
+  border: 2px solid;
+  user-select: none;
+  text-decoration: none;
+  padding: 0 1.5rem;
+  border-radius: var(--btn-radius);
+  box-shadow: var(--shadow-normal);
+
+  color: var(--main-color);
+  background-color: white;
+  border-color: var(--main-color);
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2em var(--main-color-light);
+  }
+
+  /* Hover State */
+  &:hover:not([disabled='true']),
+  &:hover:not([aria-disabled='true']) {
+    color: white;
+    background-color: var(--main-color);
+  }
+
+  &[aria-pressed='true'] {
+    box-shadow: 0 0 0 0.3em var(--main-color-light);
+  }
+
+  &[disabled='true'],
+  &[aria-disabled='true'] {
+    opacity: 0.5;
+  }
+
+  &.small {
+    height: var(--btn-size-small);
+    
+  }
+
+  &.large {
+    height: var(--btn-size-large);
+  }
+
+  &.x-large {
+    height: var(--btn-size-xl);
+  }
+}
+
+.v-btn.icon {
+  padding: 0;
+  width: var(--btn-size-normal);
+
+  &.small {
+    width: var(--btn-size-small);
+  }
+
+  &.large {
+    width: var(--btn-size-large);
+  }
+
+  &.x-large {
+    width: var(--btn-size-xl);
+  }
+}
+
+.v-btn.primary {
+  --color: var(--primary-color);
+  --color-light: var(--primary-color-light);
+  --accent: white;
+
+  color: var(--accent);
+  background-color: var(--color);
+  border-color: var(--color);
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2em var(--color-light);
+  }
+
+  &:hover:not([disabled='true']),
+  &:hover:not([aria-disabled='true']) {
+    color: var(--color);
+    background-color: var(--accent);
+  }
+
+  &[aria-pressed='true'] {
+    box-shadow: 0 0 0 0.4em var(--color-light);
+  }
+}
+
+.v-btn.loading {
+  position: relative;
+  cursor: default;
+  text-shadow: none;
+  color: transparent;
+  opacity: 1;
+  pointer-events: none;
+  transition: all 0s linear, opacity 0.1s ease;
+}
+
+.v-btn.loading:before {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  transform: translateX(-50%) translateY(-50%);
+  border-radius: 500rem;
+  border: 0.2em solid var(--main-color-light);
+}
+
+.v-btn.loading:after {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  animation: button-spin 0.6s linear;
+  animation-iteration-count: infinite;
+  border-radius: 500rem;
+  border-color: var(--main-color) transparent transparent;
+  border-style: solid;
+  border-width: 0.2em;
+  box-shadow: 0px 0px 0px 1px transparent;
+}
+
+.v-btn.primary.loading:before {
+  border: 0.2em solid rgba(255, 255, 255, 0.15);
+}
+
+.v-btn.primary.loading:after {
+  border-color: white transparent transparent;
+}
+
+.v-btn.round {
+  border-radius: 999px;
+}
+
+@keyframes button-spin {
+  from {
+    transform: translateX(-50%) translateY(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) translateY(-50%) rotate(360deg);
+  }
+}

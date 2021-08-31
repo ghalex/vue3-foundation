@@ -1,0 +1,44 @@
+
+.v-menu {
+  position: relative;
+  border-radius: var(--menu-radius);
+}
+
+.v-menu-items {
+  position: absolute;
+  background-color: white;
+  border: 2px solid var(--main-color);
+  border-radius: var(--menu-radius);
+  box-shadow: var(--shadow-normal);
+  overflow: hidden;
+  margin-top: 8px;
+  z-index: 500;
+}
+
+.v-menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  white-space: nowrap;
+
+  &[disabled='true'],
+  &[aria-disabled='true'] {
+    color: #ccc;
+  }
+}
+
+.v-menu-item:not(:last-child) {
+}
+
+.v-menu-item:hover {
+  color: white;
+  cursor: pointer;
+  background-color: var(--main-color);
+}
+
+.v-menu-separator {
+  background-color: var(--main-color);
+  flex: 1;
+  width: 100%;
+  height: 2px;
+}

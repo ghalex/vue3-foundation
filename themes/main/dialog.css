@@ -1,0 +1,10 @@
+.v-dialog {
+  background-color: white;
+  border: 2px solid var(--main-color);
+  border-radius: var(--dialog-radius);
+  box-shadow: var(--shadow-normal);
+}
+
+.v-dialog-backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}

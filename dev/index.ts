@@ -4,7 +4,7 @@ import router from './router'
 import App from './App.vue'
 import ZebbraUI from '@/index'
 
-import './assets/scss/main.scss'
+import './assets/css/main.css'
 
 const app = createApp(App)
 
